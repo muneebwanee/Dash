@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.github.muneebwanee.dash"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "2.0.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        buildTypes.each {
+            it.buildConfigField("String", "PACKAGE_CHECK_SOCIAL", PACKAGE_CHECK_SOCIAL)
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    sourceSets { main.java.srcDirs += 'src/main/kotlin' }
+    kapt { generateStubs = true }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //android lifecycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.1.0'
+
+    //Firebase
+    implementation "com.google.firebase:firebase-auth:19.0.0"
+    implementation "com.google.firebase:firebase-database:19.1.0"
+    implementation "com.google.firebase:firebase-storage:19.0.1"
+    implementation "com.google.firebase:firebase-core:17.2.0"
+    implementation 'com.firebaseui:firebase-ui:5.1.0'
+
+    //play-services
+    implementation "com.google.android.gms:play-services-maps:17.0.0"
+
+    //PlayButton
+    implementation 'com.github.romancha:MaterialPlayPauseViewButton:1.0.1'
+
+    //circle-progress-view
+    implementation 'com.github.jakob-grabner:Circle-Progress-View:v1.3'
+
+    //CircleImageView
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //floatinbutton
+    implementation 'com.github.clans:fab:1.6.4'
+
+    //spinner
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+
+    //animation
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+
+    //dialog
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+
+    //Android-SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //KAndroid
+    implementation 'com.pawegio.kandroid:kandroid:0.8.7@aar'
+
+    //Android-Ktx
+    implementation 'androidx.core:core-ktx:1.0.2'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //kotterknife
+    implementation 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+
+    //dagger2
+    implementation 'com.google.dagger:dagger:2.16'
+    kapt 'com.google.dagger:dagger-compiler:2.14.1'
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    //RxPermissions
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+
+    //RxBinding - Kotlin
+    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
+
+    //RxKotlin2 / RxAndroid
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //root
+    implementation 'com.chrisplus.rootmanager:library:2.0.5@aar'
+
+    //deviceName
+    implementation 'com.jaredrummler:android-device-names:1.1.9'
+
+
+}
+
+
+
+apply plugin: 'com.google.gms.google-services'
