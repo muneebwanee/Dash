@@ -1,0 +1,8 @@
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFlags="flagDefault|flagIncludeNotImportantViews"
+    android:accessibilityFeedbackType="feedbackAllMask"
+    android:notificationTimeout="100"
+    android:description="@string/accessibility_service_description"
+    android:canRetrieveWindowContent="true"/>
