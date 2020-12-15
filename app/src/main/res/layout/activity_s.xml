@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Match"
+    android:background="@color/colorWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="30dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginTop="60dp"
+            android:id="@+id/txt_email_social"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/email_social"
+            android:inputType="textEmailAddress"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.EditText"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:theme="@style/AppTheme.EditText"
+            android:id="@+id/txt_password_social"
+            android:hint="@string/pass_social"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_btn_sign_in"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/btn_login_social"/>
+
+    </LinearLayout>
+
+</ScrollView>

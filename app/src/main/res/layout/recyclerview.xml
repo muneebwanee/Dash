@@ -1,0 +1,7 @@
+<com.github.muneebwanee.dash.ui.widget.CustomRecyclerView
+    android:id="@+id/list"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Match"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:visibility="gone" />

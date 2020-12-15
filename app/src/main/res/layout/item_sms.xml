@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ListItemCard"
+    android:layout_width="match_parent"
+    android:id="@+id/cardview_sms"
+    app:cardUseCompatPadding="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/Match.Vertical"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:id="@+id/item_click_sms"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:baselineAligned="false">
+
+        <RelativeLayout style="@style/Match">
+
+            <TextView
+                style="@style/Wrap.Medium"
+                android:textColor="@color/colorBlack"
+                android:layout_centerVertical="true"
+                android:id="@+id/address_item_sms" />
+            <TextView
+                style="@style/Wrap.Small"
+                android:layout_centerVertical="true"
+                android:id="@+id/date_item_sms"
+                android:layout_alignParentEnd="true"
+                tools:ignore="RelativeOverlap" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/Match">
+
+            <TextView
+                style="@style/Match.Width.Small"
+                android:id="@+id/message_item_sms"
+                android:layout_toStartOf="@+id/img_type_sms"
+                android:layout_marginEnd="20dp"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/img_type_sms"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_permission"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/Match.Horizontal"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            style="@style/Wrap.Small"
+            android:text="@string/enable_keylogger"
+            android:id="@+id/txt_permission" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/img_state"
+            android:layout_marginStart="5dp"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</RelativeLayout>

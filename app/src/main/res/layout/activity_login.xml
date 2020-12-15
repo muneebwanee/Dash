@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_login"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Match">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scroll"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fitsSystemWindows="true"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:paddingBottom="30dp"
+            android:layout_marginBottom="35dp"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginTop="70dp"
+                app:srcCompat="@mipmap/ic_launcher"
+                tools:ignore="ContentDescription" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/linear_spinner"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_type"
+                    android:textColor="@color/colorWhite"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/spinner_type"
+                    app:ms_text_color="@color/colorPrimary"
+                    app:ms_arrow_tint="@color/colorPrimary"
+                    android:layout_marginStart="10dp"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edit_new_child"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border_login"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_child_care_black_24dp"
+                android:hint="@string/new_or_current_child"
+                android:visibility="gone"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColor="@color/colorTextPrimaryDark"
+                android:textColorHint="@color/colorHintDark"/>
+
+            <EditText
+                android:id="@+id/edit_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border_login"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_user_alert"
+                android:hint="@string/login_hint_user"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColor="@color/colorTextPrimaryDark"
+                android:textColorHint="@color/colorHintDark"/>
+
+            <EditText
+                android:id="@+id/edit_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_login"
+                android:drawablePadding="8dp"
+                android:drawableStart="@drawable/ic_lock"
+                android:hint="@string/login_hint_passw"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textColor="@color/colorTextPrimaryDark"
+                android:textColorHint="@color/colorHintDark" />
+
+
+            <Button
+                android:id="@+id/btn_login_signin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/colorAccent"
+                android:enabled="false"
+                android:text="@string/login_btn_sign_in"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/txt_login_signup"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/colorAccent"
+                android:text="@string/login_btn_sign_up"
+                android:textAllCaps="false"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="-30dp"
+                android:drawableEnd="@drawable/ic_arrow_forward_white_24dp"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

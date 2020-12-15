@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Match.Width"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:background="@color/colorWhite">
+
+    <LinearLayout
+        style="@style/Match.Width"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:id="@+id/click_one_minute_finish_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.muneebwanee.dash.ui.widget.CustomCheckBox
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/check_one_minute_finish_app"/>
+
+        <TextView
+            style="@style/Wrap.Medium"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="16dp"
+            android:text="@string/one_minute"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/Match.Width"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:id="@+id/click_two_minute_finish_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.muneebwanee.dash.ui.widget.CustomCheckBox
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/check_two_minute_finish_app" />
+
+        <TextView
+            style="@style/Wrap.Medium"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="16dp"
+            android:text="@string/two_minute"/>
+
+    </LinearLayout>
+    <LinearLayout
+        style="@style/Match.Width"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:id="@+id/click_five_minute_finish_app"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.github.muneebwanee.dash.ui.widget.CustomCheckBox
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/check_five_minute_finish_app" />
+
+        <TextView
+            style="@style/Wrap.Medium"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="16dp"
+            android:text="@string/five_minute"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    style="@style/ListItemCard"
+    android:id="@+id/item_click_photo"
+    android:layout_width="wrap_content"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout style="@style/Match.Vertical"
+        android:padding="5dp"
+        android:id="@+id/linear">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_item_photo"
+                    android:adjustViewBounds="true"
+                    android:src="@color/colorGrayTransp"
+                    android:transitionName="photo"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/ic_check"
+                    android:id="@+id/img_selected_photo"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            style="@style/Match.Width"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/card"
+            android:layout_marginStart="20dp"
+            android:id="@+id/item_palette">
+
+            <TextView
+                style="@style/Wrap.Medium"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/name_item_photo" />
+
+            <TextView
+                style="@style/Wrap.Small"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/date_item_photo" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

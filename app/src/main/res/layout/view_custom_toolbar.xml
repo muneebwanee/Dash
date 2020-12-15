@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.muneebwanee.dash.ui.widget.toolbar.CustomToolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Match"
+    android:fitsSystemWindows="true"
+    app:layout_scrollFlags="scroll|snap"
+    android:id="@+id/toolbar" />

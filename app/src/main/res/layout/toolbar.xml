@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ContentDescription"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tb_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true"
+        android:background="@color/colorWhite"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/tb_menu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:padding="12dp"
+                    android:scaleType="centerCrop"
+                    android:tint="@color/colorIconTint"
+                    android:src="@drawable/ic_more_vert_black_24dp"
+                    android:visibility="gone"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/tb_nav"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:tint="@color/colorIconTint"
+                    android:scaleType="center"
+                    android:visibility="visible"
+                    android:backgroundTint="@color/colorWhite"
+                    app:srcCompat="@drawable/ic_menu_animated"
+                    android:focusable="true" />
+
+                <TextView
+                    android:id="@+id/tb_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/colorTextPlaceholder"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="PlaceHolder"
+                    android:layout_marginStart="16dp"
+                    android:layout_toStartOf="@+id/tb_child_photo"
+                    android:layout_toEndOf="@+id/tb_nav" />
+
+                <LinearLayout
+                    android:id="@+id/inputContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@+id/tb_menu"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="invisible">
+
+                    <EditText
+                        android:id="@+id/tb_editText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:imeOptions="flagNoExtractUi|actionSearch"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/tb_clear"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:padding="12dp"
+                        android:visibility="gone"
+                        android:tint="@color/colorIconTint"
+                        android:src="@drawable/ic_close_black_24dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/tb_action_delete"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:layout_alignParentEnd="true"
+                    android:focusable="true"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/icon_delete"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/tb_state"
+                    android:padding="15dp"
+                    android:layout_marginStart="5dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:visibility="invisible"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_toStartOf="@+id/tb_child_photo"
+                    tools:ignore="ContentDescription" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/tb_child_photo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_placeholder_profile" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/last"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/tb_record"
+                android:layout_alignParentStart="true">
+
+                <View
+                    android:id="@+id/tb_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tb_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/root"
+                android:id="@+id/tb_record"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    style="@style/Match.Width"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tb_view_record"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_fiber_manual_record_24dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/recording_go"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:id="@+id/tb_timer_record"
+                        android:textColor="@color/colorBlack"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tb_progress"
+                android:layout_marginTop="-7dp"
+                android:layout_marginBottom="-7dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                android:layout_below="@+id/root"
+                android:secondaryProgressTint="@color/colorAccentTransp"
+                style="?android:attr/progressBarStyleHorizontal" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</merge>

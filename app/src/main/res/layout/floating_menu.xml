@@ -1,0 +1,56 @@
+<com.github.clans.fab.FloatingActionMenu
+    android:id="@+id/menu_get_photo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    fab:menu_shadowXOffset="3dp"
+    fab:menu_shadowYOffset="3dp"
+    fab:menu_fab_size="normal"
+    fab:menu_showShadow="true"
+    fab:menu_shadowColor="@color/transparent"
+    fab:menu_shadowRadius="4dp"
+    fab:menu_animationDelayPerItem="50"
+    fab:menu_buttonSpacing="0dp"
+    fab:borderWidth="0dp"
+    fab:layout_dodgeInsetEdges="bottom"
+    fab:menu_openDirection="up"
+    fab:menu_colorNormal="@color/colorPrimary"
+    fab:menu_colorPressed="@color/colorPrimaryDark"
+    fab:menu_colorRipple="@color/colorAccent"
+    fab:menu_icon="@drawable/ic_add_a_photo_black_24dp"
+    fab:menu_backgroundColor="@color/transparent"
+    fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+    fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+    fab:menu_labels_textSize="14dp"
+    fab:menu_labels_colorNormal="@color/colorWhite"
+    fab:menu_labels_colorPressed="@color/colorWhite"
+    fab:menu_labels_colorRipple="@color/colorPrimary"
+    fab:menu_labels_textColor="@color/colorBlack"
+    fab:menu_labels_singleLine="true"
+    fab:menu_labels_ellipsize="end"
+    fab:menu_labels_maxLines="2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto">
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/menu_item_get_rear_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_photo_camera_black_24dp"
+        fab:fab_size="mini"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_colorRipple="@color/colorAccent"
+        fab:fab_label="@string/get_rear_photo" />
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/menu_item_get_front_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_photo_camera_black_24dp"
+        fab:fab_size="mini"
+        fab:fab_colorNormal="@color/colorPrimary"
+        fab:fab_colorPressed="@color/colorPrimaryDark"
+        fab:fab_colorRipple="@color/colorAccent"
+        fab:fab_label="@string/get_front_photo" />
+
+</com.github.clans.fab.FloatingActionMenu>

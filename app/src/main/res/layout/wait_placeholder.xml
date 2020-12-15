@@ -1,0 +1,25 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Wrap"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/progress_placeholder"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@color/colorWhite"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        app:srcCompat="@drawable/ic_wait_meme"
+        tools:ignore="ContentDescription" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        style="@style/Wrap"
+        app:SpinKit_Style="ThreeBounce"
+        app:SpinKit_Color="@color/colorAccent" />
+
+</LinearLayout>

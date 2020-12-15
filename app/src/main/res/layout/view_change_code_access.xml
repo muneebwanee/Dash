@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/Match.Width"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    android:paddingBottom="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.muneebwanee.dash.ui.widget.CustomEditText
+        style="@style/Match.Width"
+        app:et_minCharacters="4"
+        app:et_maxCharacters="4"
+        android:id="@+id/current_access_code"
+        app:et_inputType="passwordNumber"
+        app:et_hint="@string/current_access_code"
+        android:visibility="gone"/>
+
+    <com.github.muneebwanee.dash.ui.widget.CustomEditText
+        style="@style/Match.Width"
+        app:et_minCharacters="4"
+        app:et_maxCharacters="4"
+        android:id="@+id/new_access_code"
+        android:layout_marginTop="5dp"
+        app:et_inputType="passwordNumber"
+        app:et_hint="@string/new_access_code"/>
+
+    <com.github.muneebwanee.dash.ui.widget.CustomEditText
+        style="@style/Match.Width"
+        app:et_minCharacters="4"
+        app:et_maxCharacters="4"
+        android:id="@+id/repeat_access_code"
+        android:layout_marginTop="5dp"
+        app:et_inputType="passwordNumber"
+        app:et_hint="@string/repeat_new_access_code"/>
+
+</LinearLayout>

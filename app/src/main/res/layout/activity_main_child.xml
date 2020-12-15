@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context="com.github.muneebwanee.dash.ui.activities.mainchild.MainChildActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearlayout"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:text="@string/ready_to_continue"
+            style="@style/Base.TextAppearance.AppCompat.Medium"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_enable_overdraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_overdraw"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:ignore="RelativeOverlap" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:id="@+id/switch_overdraw"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_enable_usage_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_usage_stats"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:ignore="RelativeOverlap" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:id="@+id/switch_usage_stats"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_enable_service"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_service"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:ignore="RelativeOverlap" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:id="@+id/switch_accessibility"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_enable_service_notification"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/switch_notification"
+                android:text="@string/enable_service_notification_listener"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:ignore="RelativeOverlap" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_centerVertical="true"
+                android:id="@+id/switch_notification"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+        <RelativeLayout
+            android:id="@+id/btn_add_whitelist"
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/switch_add_whitelist"
+                android:text="@string/add_to_whitelist"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:ignore="RelativeOverlap" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_centerVertical="true"
+                android:id="@+id/switch_add_whitelist"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorTextDisabled"/>
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_hide_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/hide_app"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

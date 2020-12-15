@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout style="@style/Match"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.muneebwanee.dash.ui.widget.CustomConstraintLayout
+        style="@style/Match">
+
+        <LinearLayout
+            style="@style/Match.Vertical"
+            android:gravity="center"
+            android:id="@+id/view_credentials"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include layout="@layout/wait_placeholder"/>
+
+            <ImageView
+                style="@style/Wrap"
+                android:visibility="gone"
+                android:id="@+id/done_social"
+                app:srcCompat="@drawable/ic_fuck_yeah_meme"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                style="@style/Wrap.Large"
+                android:text="@string/credentials"
+                android:textColor="@color/colorAccentSemiTransp" />
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:text="@string/email"
+                    android:textColor="@color/colorAccentSemiTransp" />
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:id="@+id/txt_email_get_social"
+                    android:text="@string/ellipsis"
+                    android:layout_marginStart="5dp"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:text="@string/password"
+                    android:textColor="@color/colorAccentSemiTransp" />
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:id="@+id/txt_pass_get_social"
+                    android:text="@string/ellipsis"
+                    android:layout_marginStart="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <include layout="@layout/failed_placeholder"/>
+
+    </com.github.muneebwanee.dash.ui.widget.CustomConstraintLayout>
+
+    <include layout="@layout/view_app_bar"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

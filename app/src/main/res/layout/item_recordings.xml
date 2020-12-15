@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ListItemCard"
+    android:layout_width="match_parent"
+    android:id="@+id/cardview_record"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        style="@style/Match.Horizontal"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/item_click_record"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            style="@style/Wrap"
+            android:layout_marginStart="16dp">
+
+            <at.grabner.circleprogress.CircleProgressView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/progress_item_record"
+                app:cpv_showTextInSpinningMode="false"
+                app:cpv_barColor="@color/colorAccent"
+                app:cpv_spinColor="@color/colorAccent"
+                app:cpv_outerContourColor="@color/colorAccent"
+                app:cpv_barWidth="3dp"
+                app:cpv_spinSpeed="4"
+                app:cpv_spinBarLength="100"
+                app:cpv_innerContourSize="0dp"
+                app:cpv_outerContourSize="1dp"
+                app:cpv_textScale="0"
+                app:cpv_autoTextSize="true"
+                app:cpv_rimColor="@color/colorAccentTransp"
+                app:cpv_rimWidth="3dp"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_centerInParent="true"
+                android:layout_height="30dp"
+                android:id="@+id/img_item_record"
+                android:background="@drawable/ic_file_download_black_24dp"
+                android:contentDescription="@string/app_name" />
+
+            <com.romancha.playpause.PlayPauseView
+                android:layout_width="40dp"
+                android:clickable="true"
+                android:visibility="gone"
+                android:focusable="true"
+                android:layout_centerInParent="true"
+                android:id="@+id/play_button_record"
+                app:fill_color="@color/colorGrayTransp"
+                app:play_bg="@color/colorAccent"
+                app:pause_bg="@color/colorAccent"
+                android:layout_height="40dp"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_check"
+                android:id="@+id/img_selected_record"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/Match">
+
+                <TextView
+                    style="@style/Wrap.Small"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/name_item_record"/>
+                <TextView
+                    style="@style/Wrap.Small"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/date_item_record"
+                    android:layout_alignParentEnd="true"
+                    tools:ignore="RelativeOverlap" />
+
+
+            </RelativeLayout>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-10dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/progress_seekbar_record"/>
+
+            <LinearLayout
+                style="@style/Wrap.Horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    style="@style/Wrap.Small"
+                    android:text="@string/duration_default"
+                    android:id="@+id/current_duration_item_record" />
+                <TextView
+                    style="@style/Wrap.Small"
+                    android:text="/"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp" />
+                <TextView
+                    style="@style/Wrap.Small"
+                    android:id="@+id/duration_item_record" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

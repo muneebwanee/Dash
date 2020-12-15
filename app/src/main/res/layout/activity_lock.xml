@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/Match.Vertical"
+    android:gravity="center"
+    android:background="@color/colorShaft"
+    android:padding="36dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:gravity="center"
+        android:text="@string/put_your_access_code"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/txt_msg_lock"
+        style="@style/Wrap.Medium"/>
+
+    <com.github.muneebwanee.dash.ui.widget.pinlockview.IndicatorDots
+        android:id="@+id/indicator_dots"
+        style="@style/Wrap"
+        android:layout_marginTop="16dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorHintDark"
+        android:layout_marginTop="10dp"/>
+
+    <com.github.muneebwanee.dash.ui.widget.pinlockview.CustomPinLockView
+        android:id="@+id/pin_lock_view"
+        style="@style/Wrap"
+        android:layout_marginTop="16dp"
+        app:ButtonSize="72dp"
+        app:DeleteButtonSize="64dp"
+        app:TextSize="35dp"/>
+
+</LinearLayout>

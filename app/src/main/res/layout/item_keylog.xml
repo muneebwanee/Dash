@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Match.Vertical"
+    android:fitsSystemWindows="true"
+    android:layout_height="wrap_content">
+
+    <TextView
+        style="@style/Wrap.Small"
+        android:padding="10dp"
+        android:id="@+id/txt_key_text"
+        android:textColor="@color/colorBlack" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorHintDark"/>
+</LinearLayout>

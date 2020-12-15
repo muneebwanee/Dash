@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Match.Vertical"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main_view"
+    android:background="@color/colorWhite">
+
+    <com.github.muneebwanee.dash.ui.widget.CustomFrameLayout
+        android:id="@+id/maps_fragment"
+        style="@style/Match"
+        android:fitsSystemWindows="true" />
+
+    <include layout="@layout/view_app_bar"/>
+
+    <com.github.clans.fab.FloatingActionButton
+        style="@style/Wrap"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="80dp"
+        android:id="@+id/floating_button_export"
+        app:fab_size="mini"
+        app:elevation="0dp"
+        android:visibility="invisible"
+        app:fab_colorNormal="@color/colorAccentSemiTransp"
+        app:fab_colorRipple="@color/colorAccent"
+        android:src="@drawable/ic_directions_black_24dp"
+        app:pressedTranslationZ="0dp"
+        app:borderWidth="0dp"
+        app:layout_dodgeInsetEdges="bottom"
+        android:layout_gravity="bottom|end" />
+
+    <com.github.clans.fab.FloatingActionButton
+        style="@style/Wrap"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:fab_size="normal"
+        app:layout_dodgeInsetEdges="bottom"
+        app:borderWidth="0dp"
+        android:layout_gravity="bottom|end"
+        android:id="@+id/floating_button_location"
+        app:fab_colorNormal="@color/colorPrimary"
+        app:fab_colorPressed="@color/colorPrimaryDark"
+        app:fab_colorRipple="@color/colorAccent"
+        android:src="@drawable/ic_my_location_black_24dp"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

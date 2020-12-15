@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:id="@+id/app_bar"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    app:elevation="5dp"
+    android:background="@android:color/transparent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include layout="@layout/view_custom_toolbar"/>
+
+</com.google.android.material.appbar.AppBarLayout>

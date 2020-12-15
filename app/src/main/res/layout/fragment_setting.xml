@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Match.Vertical"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main_view">
+
+    <include layout="@layout/view_app_bar"/>
+
+    <com.github.muneebwanee.dash.ui.widget.CustomNestedScrollView
+        android:fitsSystemWindows="true"
+        android:id="@+id/nested_scroll"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        style="@style/Match.Width"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Wrap.Small"
+                android:text="@string/lock_screen"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent"/>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:id="@+id/btn_enable_code_access"
+                android:orientation="vertical"
+                android:elevation="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground">
+
+                <RelativeLayout
+                    style="@style/Match.Width"
+                    android:elevation="5dp">
+
+                    <TextView
+                        style="@style/Wrap.Medium"
+                        android:padding="16dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/enable_code_access"/>
+
+                    <com.github.muneebwanee.dash.ui.widget.CustomCheckBox
+                        android:layout_height="25dp"
+                        android:layout_width="25dp"
+                        android:clickable="false"
+                        android:focusable="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:id="@+id/check_enable_code_access" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"/>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:elevation="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground"
+                android:id="@+id/btn_change_code_access"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:padding="16dp"
+                    android:textColor="@color/colorBlack"
+                    android:text="@string/change_code_access"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"/>
+
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:padding="16dp"
+                android:background="@color/colorGrayTransp">
+
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:text="@string/note_code_access"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/Wrap.Small"
+                android:text="@string/finish_application_for_inactivity"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/colorAccent"/>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:id="@+id/btn_enable_app_finih"
+                android:orientation="vertical"
+                android:elevation="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground">
+
+                <RelativeLayout
+                    style="@style/Match.Width"
+                    android:elevation="5dp">
+
+                    <TextView
+                        style="@style/Wrap.Medium"
+                        android:padding="16dp"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/enable_app_finish"/>
+
+                    <com.github.muneebwanee.dash.ui.widget.CustomCheckBox
+                        android:layout_height="25dp"
+                        android:layout_width="25dp"
+                        android:clickable="false"
+                        android:focusable="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:id="@+id/check_enable_app_finish" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"/>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:elevation="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?selectableItemBackground"
+                android:id="@+id/btn_change_time_app_finish"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    style="@style/Match.Width"
+                    android:padding="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Wrap.Medium"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/colorBlack"
+                        android:text="@string/change_app_finish_time"/>
+                    <TextView
+                        style="@style/Wrap.Small"
+                        android:id="@+id/txt_time_finish_app"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorHintDark"/>
+
+            <LinearLayout
+                style="@style/Match.Width"
+                android:padding="16dp"
+                android:background="@color/colorGrayTransp">
+
+                <TextView
+                    style="@style/Wrap.Medium"
+                    android:text="@string/assigns_a_time_interval_to_terminate_the_application_due_to_inactivity"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.github.muneebwanee.dash.ui.widget.CustomNestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
