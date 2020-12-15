@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/menu_main"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_location"
+            android:checked="true"
+            android:icon="@drawable/ic_map_black_24dp"
+            android:title="@string/maps"/>
+
+        <item
+            android:id="@+id/nav_calls"
+            android:icon="@drawable/ic_call_black_24dp"
+            android:title="@string/calls"/>
+        <item
+            android:id="@+id/nav_messages"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="@string/messages"/>
+        <item
+            android:id="@+id/nav_records"
+            android:icon="@drawable/ic_recording"
+            android:title="@string/recording"/>
+        <item
+            android:id="@+id/nav_photographic"
+            android:icon="@drawable/ic_linked_camera_black_24dp"
+            android:title="@string/photographic"/>
+        <item
+            android:id="@+id/nav_keylog"
+            android:icon="@drawable/ic_keyboard_black_24dp"
+            android:title="@string/keylog"/>
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_white_24dp"
+            android:title="@string/notify"/>
+        <item
+            android:id="@+id/nav_social"
+            android:icon="@drawable/ic_red_social"
+            android:title="@string/social"/>
+    </group>
+
+    <group
+        android:id="@+id/menu_medium"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/setting"/>
+    </group>
+
+</menu>

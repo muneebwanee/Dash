@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Child's action">
+        <menu>
+            <item android:title="@string/show_app"
+                android:id="@+id/nav_show_app"/>
+            <item android:title="@string/hide_app"
+                android:id="@+id/nav_hide_app"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/clear_keylogger_list"
+        android:id="@+id/nav_clear_keylogger"
+        android:visible="false"/>
+    <item android:title="@string/clear_calls_list"
+        android:id="@+id/nav_clear_calls"
+        android:visible="false"/>
+    <item android:title="@string/clear_record_list"
+        android:id="@+id/nav_clear_records"
+        android:visible="false"/>
+    <item android:title="@string/clear_sms_list"
+        android:id="@+id/nav_clear_sms"
+        android:visible="false"/>
+    <item android:title="@string/clear_photo_list"
+        android:id="@+id/nav_clear_photo"
+        android:visible="false"/>
+    <item android:title="@string/clear_notify_message_list"
+        android:id="@+id/nav_clear_notifications"
+        android:visible="false"/>
+    <item android:title="@string/clear_social_credentials"
+        android:id="@+id/nav_clear_social"
+        android:visible="false"/>
+    <item android:title="@string/sign_out"
+        android:id="@+id/nav_sign_out"/>
+
+</menu>
