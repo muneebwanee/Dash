@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fab_size_normal">56dp</dimen>
+    <dimen name="fab_size_mini">40dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_item_horizontal_padding">24dp</dimen>
+
+
+
+    <!-- Intrinsic height may vary. Use a large radius to ensure a semicircle. -->
+    <dimen name="nav_item_background_corner_radius_left">0dp</dimen>
+    <dimen name="nav_item_background_corner_radius_right">100dp</dimen>
+
+    <!-- This is for Rounded Rectangle -->
+    <dimen name="nav_item_background_corner_radius_left_sq">4dp</dimen>
+    <dimen name="nav_item_background_corner_radius_right_sq">4dp</dimen>
+
+    <dimen name="nav_item_background_inset_left">0dp</dimen>
+    <dimen name="nav_item_background_inset_right">8dp</dimen>
+
+    <dimen name="nav_item_background_inset_left_sq">8dp</dimen>
+    <dimen name="nav_item_background_inset_right_sq">8dp</dimen>
+    <dimen name="nav_item_background_inset_top_sq">4dp</dimen>
+    <dimen name="nav_item_background_inset_bottom_sq">4dp</dimen>
+
+    <dimen name="default_text_size">16sp</dimen>
+    <dimen name="default_button_size">60dp</dimen>
+    <dimen name="default_delete_button_size">16dp</dimen>
+    <dimen name="default_horizontal_spacing">32dp</dimen>
+    <dimen name="default_vertical_spacing">0dp</dimen>
+
+    <dimen name="default_dot_diameter">8dp</dimen>
+    <dimen name="default_dot_spacing">8dp</dimen>
+
+</resources>

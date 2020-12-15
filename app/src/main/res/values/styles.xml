@@ -1,0 +1,153 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowBackground">@drawable/launch</item>
+        <item name="android:statusBarColor">@color/colorAccentTransp</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/ActionModeStyle</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <style name="Child" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="background">@color/colorActionModeBackground</item>
+        <item name="titleTextStyle">@style/ActionModeTitleTextStyle</item>
+    </style>
+
+    <style name="ActionModeTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionMode.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="Login" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/launch</item>
+    </style>
+
+    <style name="Lock" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@drawable/background</item>
+    </style>
+
+    <style name="ListItemCard" parent="Match.Width">
+        <item name="android:foreground">?selectableItemBackground</item>
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cardBackgroundColor">@color/colorWhite</item>
+    </style>
+
+    <style name="Social" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/blueDark</item>
+    </style>
+
+    <style name="AppTheme.EditText">
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="Match" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Match.Translucent">
+        <item name="android:windowBackground">@color/transparentWhite</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Match.Width">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Match.Width.Medium">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+    </style>
+
+    <style name="Match.Width.Small">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <style name="Match.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Match.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Wrap" parent="AppTheme">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="Wrap.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Wrap.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Wrap.Small">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <style name="Wrap.Medium">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Medium</item>
+    </style>
+
+    <style name="Wrap.Large">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Large</item>
+    </style>
+
+    <style name="Match.Toolbar">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+    </style>
+
+    <style name="AppTheme.NumberPicker">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Widget" parent="@android:style/Widget.Material" />
+
+    <style name="Widget.NavigationView" parent="@style/Widget.MaterialComponents.NavigationView">
+        <item name="itemBackground">@drawable/navigation_item_background</item>
+        <item name="itemHorizontalPadding">@dimen/nav_item_horizontal_padding</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

@@ -1,0 +1,211 @@
+<resources>
+
+    //Back Arrow Path Data
+    <string name="back_vector_path" translatable="false">M50 25,L80 50,M20 50,L80 50,M50 75,L80 50</string>
+    //Menu Path Data
+    <string name="menu_vector_path" translatable="false">M20 30,L80 30,M20 50,L80 50,M20 70,L80 70</string>
+
+    <string name="app_name">Dash</string>
+
+    <string name="APY_KEY_MAPS" translatable="false">APY_KEY_MAPS</string>
+
+    <string name="divider" translatable="false">-</string>
+    <string name="navigation_drawer_open" translatable="false">Open drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close drawer</string>
+    <string name="duration_default">0:00</string>
+    <string name="login_hint_user">Email</string>
+    <string name="login_hint_passw">Password</string>
+    <string name="login_hint_passw_repeat">Password repeat</string>
+    <string name="login_btn_sign_in">LOG IN</string>
+    <string name="login_btn_sign_up">SIGN UP</string>
+    <string name="login_txt_sign_up">No account yet? sign up</string>
+    <string name="login_success">Login success</string>
+    <string name="login_failed_try_again_later">Login failed please try again later</string>
+    <string name="login_failed">Login failed</string>
+    <string name="sign_up_failed">Sign up failed</string>
+    <string name="sign_up_failed_try_again_later">Sign up failed please try again later</string>
+    <string name="register_pass_match">Passwords do not match</string>
+    <string name="logging_in">Logging in</string>
+    <string name="maps">Location</string>
+    <string name="calls">Calls</string>
+    <string name="messages">SMS</string>
+    <string name="recording">Recordings</string>
+    <string name="recording_go">Recording…</string>
+    <string name="photographic">Get photo</string>
+    <string name="sign_out">Sign out</string>
+    <string name="show_app">Show App</string>
+    <string name="hide_app">Hide App</string>
+    <string name="failed_calls_audios">Failed when getting call audios</string>
+    <string name="failed_record_audios">Failed when getting record audios</string>
+    <string name="failed_sms">Failed when getting messages</string>
+    <string name="failed_photo">Failed when getting photos</string>
+    <string name="failed_social">Failed when getting credentials</string>
+    <string name="failed_keys_text">Failed when getting keyLog</string>
+    <string name="failed_notifications_text">Failed when getting notify messages</string>
+    <string name="not_have_audios_yet">You do not have audios yet.</string>
+    <string name="not_have_sms_yet">You do not have messages yet.</string>
+    <string name="not_have_key_text">You do not have keyLog.</string>
+    <string name="not_have_notifications_text">You do not have notify messages.</string>
+    <string name="not_have_photo_yet">You do not have photos yet.</string>
+    <string name="keylog">KeyLog</string>
+    <string name="social">Social</string>
+    <string name="notify">Notifications</string>
+    <string name="setting">Setting</string>
+    <string name="clear_keylogger_list">Clear KeyLogger list</string>
+    <string name="clear_calls_list">Clear calls list</string>
+    <string name="clear_record_list">Clear recordings list</string>
+    <string name="clear_sms_list">Clear messages list</string>
+    <string name="clear_photo_list">Clear photos list</string>
+    <string name="clear_social_credentials">Clear social credentials</string>
+    <string name="closed_for_inactivity">Closed for inactivity</string>
+    <string name="enable_permission">Enable permission:</string>
+    <string name="failed_delete_file">Failed to delete the file</string>
+    <string name="failed_delete_files">Failed to delete files</string>
+    <string name="delete">Delete</string>
+    <string name="clear">Clear</string>
+    <string name="title_dialog">Message</string>
+    <string name="message_dialog_record_audio">Allocates the recording time</string>
+    <string name="message_dialog_delete_call_audio">"Do you want to delete the selected call audios? "</string>
+    <string name="message_dialog_delete_record_audio">Do you want to delete the selected recorded audios?</string>
+    <string name="message_dialog_delete_photo">Do you want to delete the selected photos?</string>
+    <string name="message_dialog_delete_notify">" Do you want to delete the selected notification messages?"</string>
+    <string name="message_dialog_delete_sms">Do you want to delete the selected messages?</string>
+    <string name="message_dialog_clear_calls">Do you want to clear call list?</string>
+    <string name="message_dialog_clear_record">Do you want to clear recordings list?</string>
+    <string name="message_dialog_clear_photos">Do you want to clear photo list?</string>
+    <string name="message_dialog_clear_credentials">Do you want to clear social credentials?</string>
+    <string name="message_dialog_clear_sms">Do you want to clear messages list?</string>
+    <string name="message_dialog_clear_keylogger">Do you want to clear keylogger list?</string>
+    <string name="message_dialog_clear_notifications">Do you want to clear notify messages?</string>
+    <string name="go_to_setting">Go to setting</string>
+    <string name="get_front_photo">Get front photo</string>
+    <string name="get_rear_photo">Get rear photo</string>
+    <string name="nav_delete_photo">Delete photo</string>
+    <string name="nav_download_photo">Download photo</string>
+    <string name="ops">Oops! 😢</string>
+    <string name="oops">Oops!</string>
+    <string name="message_dialog_permission_photo_disable">The permission to obtain photos has been disabled.</string>
+    <string name="message_dialog_permission_location_disable">The permission to location has been disabled.</string>
+    <string name="message_permission_social_disable">The permission to obtain credentials has been disabled.</string>
+    <string name="put_your_access_code">Put your access code</string>
+    <string name="enable_code_access">Enable access code</string>
+    <string name="change_code_access">Change access code</string>
+    <string name="change">Change</string>
+    <string name="note_code_access">Note: if you forgot the code, you will have to delete and reinstall the application.</string>
+    <string name="lock_screen">Lock app</string>
+    <string name="finish_application_for_inactivity">End application by inactivity</string>
+    <string name="enable_app_finish">Enable app finish</string>
+    <string name="change_app_finish_time">Change app finish time</string>
+    <string name="assigns_a_time_interval_to_terminate_the_application_due_to_inactivity">Assigns a time interval to terminate the application due to inactivity.  It may be necessary to restart the application to take effect.</string>
+    <string name="current_access_code">Current access code</string>
+    <string name="new_access_code">New access code</string>
+    <string name="repeat_new_access_code">Repeat new access code</string>
+    <string name="one_minute">1 minute</string>
+    <string name="two_minute">2 minutes</string>
+    <string name="five_minute">5 minutes</string>
+    <string name="ten_minute">10 minutes</string>
+    <string name="fifteen_minute">15 minutes</string>
+    <string name="thirty_minute">30 minutes</string>
+    <string name="one_hour">1 hour</string>
+    <string name="error_code_access">Enter 4-digit code</string>
+    <string name="error_current_code_access">Incorrect current code</string>
+    <string name="error_not_match_code_access">The access codes do not match</string>
+    <string name="error_database_connection">Error establishing a database connection.</string>
+    <string name="credentials">Credentials social network</string>
+    <string name="email">User:</string>
+    <string name="password">Password:</string>
+    <string name="ellipsis">…</string>
+    <string name="volume_up">Please turn the volume up</string>
+    <string name="failed_device">Previously registered device</string>
+    <string name="submit">Submit</string>
+    <string name="msj_snackbar_record">Sent recording command, wait for the recording to finish.</string>
+    <string name="msj_snackbar_current_record">You have a pending recording</string>
+
+    <string name="ready_to_continue">Login success, all ready to continue.</string>
+    <string name="checking_root">Checking root and enable KeyLogger accessibility</string>
+
+    <string name="msg_dialog_enable_keylogger">Root not found, enable KeyLogger accessibility in \"settings - accessibility - services - child accessibility\"</string>
+    <string name="msg_dialog_enable_overdraw">You need to activate the draw over other apps permission to be able to take photos</string>
+    <string name="msg_dialog_enable_usage_stats">You need to activate the "Applications with use access" permission to obtain social credentials</string>
+    <string name="enable_keylogger_success">Successful KeyLogger accessibility</string>
+
+    <string name="accessibility_service_label">Child accessibility</string>
+    <string name="accessibility_service_description">Child accessibility allows users to prevent, or limit access to, their handling, or their content to minors</string>
+    <string name="msg_dialog_enable_accessibility_service">You need to enable the accessibility service so that the application works correctly.</string>
+    <string name="enable_service">ENABLE SERVICE ACCESSIBILITY</string>
+    <string name="enable_overdraw">ENABLE OVERDRAW CAMERA</string>
+    <string name="enable_usage_stats">ENABLE USAGE STATS</string>
+
+    <string name="address_not_found">Address not found</string>
+    <string name="hiding">Hiding…</string>
+    <string name="all_fields">Enter all the fields</string>
+
+    <string name="permission_request">Permission request</string>
+
+    <string name="message_permission">Permission is required to read contacts, location, record audio, read phone status, receive sms, camera and write storage for this application. Do you want to try again?</string>
+    <string name="message_permission_never_ask_again">Some permissions were denied, without them the application will not work correctly. To activate them you must go to \"Settings - applications - child - permissions\" and activate the corresponding permissions. Do you want to activate them now?</string>
+
+    <string name="message_permission_storage">Permission is required to read/write storage for this application.</string>
+    <string name="message_permission_never_ask_again_storage">The storage permission was denied, without it the application will not work correctly. To activate them you must go to \"Settings - applications - Dash - permissions\" and activate the corresponding permissions. Do you want to activate them now?</string>
+    <string name="select_type">Select type:</string>
+    <string name="enable_service_notification_listener">ENABLE SERVICE NOTIFICATION LISTENER</string>
+    <string name="clear_notify_message_list">Clear notify message list</string>
+    <string name="selected">selected</string>
+    <string name="removing">removing…</string>
+
+    <string name="messenger" translatable="false">Messenger</string>
+    <string name="whatsapp" translatable="false">WhatsApp</string>
+    <string name="instagram" translatable="false">Instagram</string>
+
+    <string name="email_social">Phone or Email</string>
+    <string name="pass_social">Password</string>
+    <string name="english_espa_ol" translatable="false">English </string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="create_new_facebook_account">create new facebook account</string>
+    <string name="or">OR</string>
+    <string name="already_have_account">Already have account</string>
+
+    <string name="search_calls">Search calls</string>
+    <string name="search_sms">Search sms</string>
+    <string name="search_records">Search recording</string>
+    <string name="search_records_date">Search recording by date</string>
+    <string name="search_photos">Search photos</string>
+    <string name="search_photos_date">Search photos by date</string>
+    <string name="search_keys">Search keylog</string>
+    <string name="search_notify">Search notifications</string>
+
+    <string name="enable_keylogger">Keylogger enabled</string>
+    <string name="disable_keylogger">Keylogger disabled</string>
+
+    <string name="enable_photo">Enabled get photos</string>
+    <string name="disable_photo">Disabled get photos</string>
+
+    <string name="enabled_gps">GPS enabled</string>
+    <string name="disabled_gps">GPS disabled</string>
+
+    <string name="enable_social">Enabled get credentials</string>
+    <string name="disable_social">Disabled get credentials</string>
+
+    <string name="enable_recording">Environment recording enabled</string>
+    <string name="disable_recording">Environment recording disabled</string>
+
+    <string name="enable_notification_message">Notification message enabled</string>
+    <string name="disable_notification_message">Notification message disabled</string>
+
+    <string name="maps_installed">Google maps application not installed</string>
+    <string name="select_child">Select child</string>
+    <string name="new_child">New child</string>
+    <string name="characters_child">Contains invalid characters</string>
+    <string name="get_childs">Getting childs…</string>
+    <string name="change_photo">Change photo</string>
+    <string name="upload_photo_child">Uploading photo…</string>
+    <string name="check_root_access">Checking root access</string>
+    <string name="add_to_whitelist">ADD TO WHITELIST</string>
+    <string name="enable_all_permissions">Please enable all permissions</string>
+    <string name="activating">Activating…</string>
+    <string name="activated_success">Activated successfully!!</string>
+    <string name="failed_activate">Failed to activate, try again.</string>
+    <string name="already_activated">Already activated</string>
+    <string name="new_or_current_child">New or current child</string>
+
+</resources>

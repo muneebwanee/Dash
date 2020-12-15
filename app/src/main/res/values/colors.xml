@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#b53f43</color>
+    <color name="colorPrimaryDark">#933236</color>
+    <color name="colorAccent">#b53f43</color>
+    <color name="colorAccentTransp">#A1FFFFFF</color>
+    <color name="colorAccentSemiTransp">#9ab53f43</color>
+
+    <color name="colorSelected">#F0D5D6</color>
+    <color name="colorActionModeBackground">#7A2A2D</color>
+    <color name="colorActionModeStatusBar">#662225</color>
+
+    <color name="colorBlackTransp">#45000000</color>
+
+    <color name="transparent">#52888888</color>
+    <color name="transparentWhite">#00000000</color>
+    <color name="colorBorderLogin">#D9D9D9</color>
+    <color name="colorGrayTransp">#efefef</color>
+    <color name="colorHintDark">#BBBBBB</color>
+
+    <color name="colorTextPrimaryDark">#FEFEFE</color>
+
+    <color name="colorTextDisabled">#888686</color>
+    <color name="colorTextPlaceholder">#8A000000</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorShaft">#95303030</color>
+    <color name="colorGreen">#3fb562</color>
+    <color name="blue">#2879C9</color>
+    <color name="blueDark">#1C5996</color>
+    <color name="colorGreen_01">#40C351</color>
+    <color name="colorBlue_01">#448AFF</color>
+    <color name="colorRed_01">#FF1744</color>
+
+    <color name="colorIconTint">#3a3a3a</color>
+
+    <color name="colorDivider">#1F000000</color>
+</resources>
