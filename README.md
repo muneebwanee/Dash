@@ -1,7 +1,5 @@
 # Dash
 This is an Android Spyware App, Which uploads user data such as Contacts, Messages, Call log &amp; recordings, Send messages, Photos, Videos, etc.
-# Dash
-Open-source android spyware
 
 The application is installed on the child's device as well as on the parent's device, in the login view the type of user is chosen.
 
