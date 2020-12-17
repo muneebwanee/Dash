@@ -1,4 +1,4 @@
-<script src="https://liberapay.com/muneeb/widgets/button.js"></script>
+
 <noscript><a href="https://liberapay.com/muneeb/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
 
 # Dash
