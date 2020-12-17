@@ -1,3 +1,6 @@
+<script src="https://liberapay.com/muneeb/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/muneeb/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
 # Dash
 This is an Android Spyware App, Which uploads user data such as Contacts, Messages, Call log &amp; recordings, Send messages, Photos, Videos, etc.
 
