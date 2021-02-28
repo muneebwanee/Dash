@@ -3,7 +3,7 @@ package com.github.muneebwanee.dash.services.base
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
-import com.github.muneebwanee.dash.app.IsTheApp
+import com.github.muneebwanee.dash.app.Dash
 import com.github.muneebwanee.dash.di.component.DaggerServiceComponent
 import com.github.muneebwanee.dash.di.component.ServiceComponent
 import com.github.muneebwanee.dash.di.module.ServiceModule
@@ -29,7 +29,7 @@ abstract class BaseService : Service(), InterfaceService {
         super.onCreate()
         serviceComponent = DaggerServiceComponent.builder()
                 .serviceModule(ServiceModule(this))
-                .appComponent(IsTheApp.appComponent).build()
+                .appComponent(Dash.appComponent).build()
         compositeDisposable = CompositeDisposable()
     }
 
