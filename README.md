@@ -89,3 +89,9 @@ Copyright [2020] [muneebwanee]
    See the License for the specific language governing permissions and
    limitations under the License.
 ```
+---
+### ❤️Supporters❤️
+[![Stargazers repo roster for @swagkarna/Rafel-Rat](https://reporoster.com/stars/muneebwanee/Dash)](https://github.com/muneebwanee/Dash/stargazers)
+[![Forkers repo roster for @swagkarna/Rafel-Rat](https://reporoster.com/forks/muneebwanee/Dash)](https://github.com/muneebwanee/Dash/network/members)
+
+---
