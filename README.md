@@ -7,7 +7,7 @@ This is an Android Spyware App, Which uploads user data such as Contacts, Messag
 
 The application is installed on the child's device as well as on the parent's device, in the login view the type of user is chosen.
 
-# Feacture
+# Features
 - Multiple Child clients
 - Hidden app icon (stealth mode)
 - Real-time location.
