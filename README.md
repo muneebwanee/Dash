@@ -1,3 +1,8 @@
+## Donate to BTC Address: 
+`36QW21MQQxUK7ohBQnvP5itipe4bFx91Bo`
+
+---
+
 ![20200808_160757](https://1.bp.blogspot.com/-FgzZ6s4snE0/YLonted4bRI/AAAAAAAAA7M/btcFeIotLw42dSwU9AioHomX_GcG-xmogCLcBGAsYHQ/s1429/68747470733a2f2f312e62702e626c6f6773706f742e636f6d2f2d71374d454847336e4851342f583979763436467a3543492f41414141414141414152342f574a46387a3046766b6251325968725f6c6356686a6375473371306b5030587077434c63424741735948512f7.png)
 
 <noscript><a href="https://liberapay.com/muneeb/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
