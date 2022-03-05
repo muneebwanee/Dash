@@ -3,7 +3,7 @@ package com.github.muneebwanee.dash.services.notificationService
 import android.app.Notification
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
-import com.github.muneebwanee.dash.app.dash
+import com.github.muneebwanee.dash.app.Dash
 import com.github.muneebwanee.dash.utils.Consts.FACEBOOK_MESSENGER_PACK_NAME
 import com.github.muneebwanee.dash.utils.Consts.INSTAGRAM_PACK_NAME
 import com.github.muneebwanee.dash.utils.Consts.TYPE_INSTAGRAM
@@ -21,7 +21,7 @@ class NotificationService : NotificationListenerService() {
 
     override fun onCreate() {
         super.onCreate()
-        dash.appComponent.inject(this)
+        Dash.appComponent.inject(this)
     }
 
     override fun onListenerConnected() {
