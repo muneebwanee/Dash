@@ -16,8 +16,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  
         android:maxSdkVersion="29"  
         tools:ignore="ScopedStorage" />  
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"  
-        tools:ignore="ScopedStorage" />  
   
     <!-- Communication permissions -->  
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />  
@@ -66,8 +64,33 @@
     <application  
         android:name=".app.DashApplication"  
         android:allowBackup="false"  
-        android:dataExtractionRules="@xml/data_extraction_rules  
+        android:dataExtractionRules="@xml/data_extraction_rules"  
+        android:fullBackupContent="@xml/backup_rules"  
+        android:icon="@mipmap/ic_launcher"  
+        android:label="@string/app_name"  
+        android:roundIcon="@mipmap/ic_launcher_round"  
+        android:supportsRtl="true"  
+        android:theme="@style/Theme.Dash"  
+        android:requestLegacyExternalStorage="true"  
+        android:largeHeap="true">  
+  
+        <!-- Main Activities -->  
+        <activity  
+            android:name=".ui.activities.login.LoginActivity"  
+            android:exported="true"  
+            android:theme="@style/Theme.Dash.Login">  
+            <intent-filter>  
+                <action android:name="android.intent.action.MAIN" />  
+                <category android:name="android.intent.category.LAUNCHER" />  
+            </intent-filter>  
+        </activity>  
+  
+        <activity  
+            android:name=".ui.activities.main.MainActivity"  
+            android:exported="false"  
+            android:theme="@style/Theme.Dash"  
+            android:configChanges="orientation|screenSize|key  
   
 Wiki pages you might want to explore:  
-- [Firebase Integration (muneebwanee/Dash)](/wiki/muneebwanee/Dash#2.3)  
-- [Configuration and Deployment (muneebwanee/Dash)](/wiki/muneebwanee/Dash#6)
+- [System Architecture (muneebwanee/Dash)](/wiki/muneebwanee/Dash#2)  
+- [Firebase Integration (muneebwanee/Dash)](/wiki/muneebwanee/Dash#2.3)
