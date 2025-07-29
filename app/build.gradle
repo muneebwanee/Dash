@@ -1,131 +1,180 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'kotlin-kapt'
-
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        applicationId "com.github.muneebwanee.dash"
-        minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "2.0.0"
-        multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        buildTypes.each {
-            it.buildConfigField("String", "PACKAGE_CHECK_SOCIAL", PACKAGE_CHECK_SOCIAL)
-        }
-    }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
-
-    sourceSets { main.java.srcDirs += 'src/main/kotlin' }
-    kapt { generateStubs = true }
+plugins {  
+    id 'com.android.application'  
+    id 'kotlin-android'  
+    id 'kotlin-kapt'  
+    id 'dagger.hilt.android.plugin'  
+    id 'com.google.gms.google-services'  
+    id 'kotlin-parcelize'  
+}  
+  
+android {  
+    namespace 'com.github.muneebwanee.dash'  
+    compileSdk 34  
+  
+    defaultConfig {  
+        applicationId "com.github.muneebwanee.dash"  
+        minSdk 24  
+        targetSdk 34  
+        versionCode 1  
+        versionName "3.0.0"  
+        multiDexEnabled true  
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"  
+          
+        // Secure API key management  
+        Properties properties = new Properties()  
+        if (rootProject.file("local.properties").exists()) {  
+            properties.load(rootProject.file("local.properties").newDataInputStream())  
+        }  
+        resValue "string", "APY_KEY_MAPS", properties.getProperty("MAPS_API_KEY", "")  
+        buildConfigField "String", "PACKAGE_CHECK_SOCIAL", "\\"${properties.getProperty("PACKAGE_CHECK_SOCIAL", "com.example.social")}\\""  
+    }  
+  
+    buildFeatures {  
+        viewBinding true  
+        buildConfig true  
+        compose true  
+    }  
+  
+    composeOptions {  
+        kotlinCompilerExtensionVersion '1.5.4'  
+    }  
+  
+    buildTypes {  
+        release {  
+            minifyEnabled true  
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  
+        }  
+        debug {  
+            applicationIdSuffix ".debug"  
+            debuggable true  
+        }  
+    }  
+  
+    compileOptions {  
+        sourceCompatibility JavaVersion.VERSION_1_8  
+        targetCompatibility JavaVersion.VERSION_1_8  
+    }  
+  
+    kotlinOptions {  
+        jvmTarget = '1.8'  
+        freeCompilerArgs += [  
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",  
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"  
+        ]  
+    }  
+  
+    packagingOptions {  
+        resources {  
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'  
+        }  
+    }  
+}  
+  
+dependencies {  
+    // Core Android  
+    implementation 'androidx.core:core-ktx:1.12.0'  
+    implementation 'androidx.appcompat:appcompat:1.6.1'  
+    implementation 'androidx.activity:activity-ktx:1.8.2'  
+    implementation 'androidx.fragment:fragment-ktx:1.6.2'  
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'  
+    implementation 'androidx.multidex:multidex:2.0.1'  
+  
+    // Material Design 3  
+    implementation 'com.google.android.material:material:1.11.0'  
+  
+    // Jetpack Compose  
+    implementation platform('androidx.compose:compose-bom:2023.10.01')  
+    implementation 'androidx.compose.ui:ui'  
+    implementation 'androidx.compose.ui:ui-tooling-preview'  
+    implementation 'androidx.compose.material3:material3'  
+    implementation 'androidx.activity:activity-compose:1.8.2'  
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'  
+    implementation 'androidx.navigation:navigation-compose:2.7.5'  
+  
+    // Lifecycle & ViewModel  
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'  
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'  
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'  
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.7.0'  
+  
+    // Navigation  
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'  
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.5'  
+  
+    // WorkManager for background tasks  
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'  
+  
+    // Room for local database  
+    implementation 'androidx.room:room-runtime:2.6.1'  
+    implementation 'androidx.room:room-ktx:2.6.1'  
+    kapt 'androidx.room:room-compiler:2.6.1'  
+  
+    // DataStore (modern SharedPreferences)  
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'  
+  
+    // Firebase BOM for version management  
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')  
+    implementation 'com.google.firebase:firebase-auth'  
+    implementation 'com.google.firebase:firebase-firestore'  
+    implementation 'com.google.firebase:firebase-storage'  
+    implementation 'com.google.firebase:firebase-analytics'  
+    implementation 'com.google.firebase:firebase-crashlytics'  
+  
+    // Google Play Services  
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'  
+    implementation 'com.google.android.gms:play-services-location:21.0.1'  
+  
+    // Dependency Injection - Hilt  
+    implementation "com.google.dagger:hilt-android:$hilt_version"  
+    implementation 'androidx.hilt:hilt-work:1.1.0'  
+    implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'  
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"  
+    kapt 'androidx.hilt:hilt-compiler:1.1.0'  
+  
+    // Coroutines & Flow  
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'  
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3'  
+  
+    // RxJava3 (for legacy compatibility)  
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.8'  
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'  
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'  
+  
+    // Networking & Serialization  
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'  
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'  
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'  
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0'  
+  
+    // Image Loading  
+    implementation "com.github.bumptech.glide:glide:$glide_version"  
+    implementation 'io.coil-kt:coil-compose:2.5.0'  
+    kapt "com.github.bumptech.glide:compiler:$glide_version"  
+  
+    // Camera  
+    implementation 'androidx.camera:camera-core:1.3.1'  
+    implementation 'androidx.camera:camera-camera2:1.3.1'  
+    implementation 'androidx.camera:camera-lifecycle:1.3.1'  
+    implementation 'androidx.camera:camera-view:1.3.1'  
+  
+    // Permissions  
+    implementation 'com.google.accompanist:accompanist-permissions:0.32.0'  
+  
+    // UI Components  
+    implementation 'de.hdodenhof:circleimageview:3.1.0'  
+    implementation 'com.airbnb.android:lottie:6.2.0'  
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'  
+  
+    // Security  
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'  
+  
+    // Testing  
+    testImplementation 'junit:junit:4.13.2'  
+    testImplementation 'org.mockito:mockito-core:5.7.0'  
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'  
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'  
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'  
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'  
+    debugImplementation 'androidx.compose.ui:ui-tooling'  
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'  
 }
-
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    //noinspection GradleCompatible
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.multidex:multidex:2.0.1'
-
-    //android lifecycle
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
-    kapt 'androidx.lifecycle:lifecycle-compiler:2.1.0'
-
-    //Firebase
-    implementation "com.google.firebase:firebase-auth:19.0.0"
-    implementation "com.google.firebase:firebase-database:19.1.0"
-    implementation "com.google.firebase:firebase-storage:19.0.1"
-    implementation "com.google.firebase:firebase-core:17.2.0"
-    implementation 'com.firebaseui:firebase-ui:5.1.0'
-
-    //play-services
-    implementation "com.google.android.gms:play-services-maps:17.0.0"
-
-    //PlayButton
-    implementation 'com.github.romancha:MaterialPlayPauseViewButton:1.0.1'
-
-    //circle-progress-view
-    implementation 'com.github.jakob-grabner:Circle-Progress-View:v1.3'
-
-    //CircleImageView
-    implementation 'de.hdodenhof:circleimageview:2.2.0'
-
-    //floatinbutton
-    implementation 'com.github.clans:fab:1.6.4'
-
-    //spinner
-    implementation 'com.jaredrummler:material-spinner:1.3.1'
-
-    //animation
-    implementation 'com.daimajia.androidanimations:library:2.3@aar'
-
-    //dialog
-    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
-
-    //Android-SpinKit
-    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
-
-    //glide
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
-
-    //picasso
-    implementation 'com.squareup.picasso:picasso:2.71828'
-
-    //KAndroid
-    implementation 'com.pawegio.kandroid:kandroid:0.8.7@aar'
-
-    //Android-Ktx
-    implementation 'androidx.core:core-ktx:1.0.2'
-
-    //Gson
-    implementation 'com.google.code.gson:gson:2.8.5'
-
-    //kotterknife
-    implementation 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
-
-    //dagger2
-    implementation 'com.google.dagger:dagger:2.16'
-    kapt 'com.google.dagger:dagger-compiler:2.14.1'
-    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
-
-    //RxPermissions
-    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
-
-    //RxBinding - Kotlin
-    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
-
-    //RxKotlin2 / RxAndroid
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-
-    //root
-    implementation 'com.chrisplus.rootmanager:library:2.0.5@aar'
-
-    //deviceName
-    implementation 'com.jaredrummler:android-device-names:1.1.9'
-
-
-}
-
-
-
-apply plugin: 'com.google.gms.google-services'
