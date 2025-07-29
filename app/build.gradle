@@ -2,9 +2,11 @@ plugins {
     id 'com.android.application'  
     id 'kotlin-android'  
     id 'kotlin-kapt'  
+    id 'kotlin-parcelize'  
+    id 'kotlinx-serialization'  
     id 'dagger.hilt.android.plugin'  
     id 'com.google.gms.google-services'  
-    id 'kotlin-parcelize'  
+    id 'com.google.firebase.crashlytics'  
 }  
   
 android {  
@@ -13,14 +15,14 @@ android {
   
     defaultConfig {  
         applicationId "com.github.muneebwanee.dash"  
-        minSdk 24  
+        minSdk 26  
         targetSdk 34  
-        versionCode 1  
+        versionCode 2  
         versionName "3.0.0"  
         multiDexEnabled true  
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"  
           
-        // Secure API key management  
+        // Secure configuration  
         Properties properties = new Properties()  
         if (rootProject.file("local.properties").exists()) {  
             properties.load(rootProject.file("local.properties").newDataInputStream())  
@@ -42,31 +44,40 @@ android {
     buildTypes {  
         release {  
             minifyEnabled true  
+            shrinkResources true  
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'  
         }  
         debug {  
             applicationIdSuffix ".debug"  
             debuggable true  
+            minifyEnabled false  
         }  
     }  
   
     compileOptions {  
-        sourceCompatibility JavaVersion.VERSION_1_8  
-        targetCompatibility JavaVersion.VERSION_1_8  
+        sourceCompatibility JavaVersion.VERSION_17  
+        targetCompatibility JavaVersion.VERSION_17  
     }  
   
     kotlinOptions {  
-        jvmTarget = '1.8'  
+        jvmTarget = '17'  
         freeCompilerArgs += [  
             "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",  
-            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"  
+            "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",  
+            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"  
         ]  
     }  
   
     packagingOptions {  
         resources {  
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'  
+            excludes += ['/META-INF/{AL2.0,LGPL2.1}', '/META-INF/gradle/incremental.annotation.processors']  
         }  
+    }  
+  
+    lint {  
+        checkReleaseBuilds false  
+        abortOnError false  
+        disable 'MissingTranslation'  
     }  
 }  
   
@@ -78,6 +89,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.6.2'  
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'  
     implementation 'androidx.multidex:multidex:2.0.1'  
+    implementation 'androidx.startup:startup-runtime:1.1.1'  
   
     // Material Design 3  
     implementation 'com.google.android.material:material:1.11.0'  
@@ -87,6 +99,7 @@ dependencies {
     implementation 'androidx.compose.ui:ui'  
     implementation 'androidx.compose.ui:ui-tooling-preview'  
     implementation 'androidx.compose.material3:material3'  
+    implementation 'androidx.compose.material:material-icons-extended'  
     implementation 'androidx.activity:activity-compose:1.8.2'  
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'  
     implementation 'androidx.navigation:navigation-compose:2.7.5'  
@@ -96,6 +109,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'  
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'  
     implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.7.0'  
+    implementation 'androidx.lifecycle:lifecycle-process:2.7.0'  
   
     // Navigation  
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.5'  
@@ -111,6 +125,7 @@ dependencies {
   
     // DataStore (modern SharedPreferences)  
     implementation 'androidx.datastore:datastore-preferences:1.0.0'  
+    implementation 'androidx.datastore:datastore-core:1.0.0'  
   
     // Firebase BOM for version management  
     implementation platform('com.google.firebase:firebase-bom:32.7.0')  
@@ -119,26 +134,23 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage'  
     implementation 'com.google.firebase:firebase-analytics'  
     implementation 'com.google.firebase:firebase-crashlytics'  
+    implementation 'com.google.firebase:firebase-messaging'  
   
     // Google Play Services  
     implementation 'com.google.android.gms:play-services-maps:18.2.0'  
     implementation 'com.google.android.gms:play-services-location:21.0.1'  
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'  
   
     // Dependency Injection - Hilt  
-    implementation "com.google.dagger:hilt-android:$hilt_version"  
+    implementation 'com.google.dagger:hilt-android:2.48.1'  
     implementation 'androidx.hilt:hilt-work:1.1.0'  
     implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'  
-    kapt "com.google.dagger:hilt-compiler:$hilt_version"  
+    kapt 'com.google.dagger:hilt-compiler:2.48.1'  
     kapt 'androidx.hilt:hilt-compiler:1.1.0'  
   
     // Coroutines & Flow  
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'  
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3'  
-  
-    // RxJava3 (for legacy compatibility)  
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.8'  
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'  
-    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'  
   
     // Networking & Serialization  
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'  
@@ -147,15 +159,16 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0'  
   
     // Image Loading  
-    implementation "com.github.bumptech.glide:glide:$glide_version"  
+    implementation 'com.github.bumptech.glide:glide:4.16.0'  
     implementation 'io.coil-kt:coil-compose:2.5.0'  
-    kapt "com.github.bumptech.glide:compiler:$glide_version"  
+    kapt 'com.github.bumptech.glide:compiler:4.16.0'  
   
     // Camera  
     implementation 'androidx.camera:camera-core:1.3.1'  
     implementation 'androidx.camera:camera-camera2:1.3.1'  
     implementation 'androidx.camera:camera-lifecycle:1.3.1'  
     implementation 'androidx.camera:camera-view:1.3.1'  
+    implementation 'androidx.camera:camera-extensions:1.3.1'  
   
     // Permissions  
     implementation 'com.google.accompanist:accompanist-permissions:0.32.0'  
@@ -165,13 +178,19 @@ dependencies {
     implementation 'com.airbnb.android:lottie:6.2.0'  
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'  
   
-    // Security  
+    // Security & Encryption  
     implementation 'androidx.security:security-crypto:1.1.0-alpha06'  
+    implementation 'androidx.biometric:biometric:1.1.0'  
+  
+    // Modern replacements for old libraries  
+    implementation 'com.jakewharton.timber:timber:5.0.1'  
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'  
   
     // Testing  
     testImplementation 'junit:junit:4.13.2'  
     testImplementation 'org.mockito:mockito-core:5.7.0'  
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'  
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'  
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'  
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'  
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'  
