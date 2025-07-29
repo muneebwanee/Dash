@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<notification-channels xmlns:android="http://schemas.android.com/apk/res/android">  
+    <channel  
+        android:id="monitoring_channel"  
+        android:name="@string/monitoring  
+  
+Wiki pages you might want to explore:  
+- [System Architecture (muneebwanee/Dash)](/wiki/muneebwanee/Dash#2)  
+- [Firebase Integration (muneebwanee/Dash)](/wiki/muneebwanee/Dash#2.3)
