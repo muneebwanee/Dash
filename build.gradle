@@ -2,6 +2,7 @@ buildscript {
     ext.kotlin_version = '1.9.20'  
     ext.glide_version = '4.16.0'  
     ext.hilt_version = '2.48.1'  
+    ext.compose_version = '1.5.4'  
       
     repositories {  
         google()  
@@ -14,6 +15,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"  
         classpath 'com.google.gms:google-services:4.4.0'  
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"  
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'  
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"  
     }  
 }  
   
@@ -22,6 +25,7 @@ allprojects {
         google()  
         mavenCentral()  
         maven { url 'https://jitpack.io' }  
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }  
     }  
 }  
   
